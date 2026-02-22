@@ -1,0 +1,9 @@
+.contact-container {
+    display: flex;
+    place-items: center;
+    place-self: center;
+}
+
+.contact-container .title {
+    text-align: center;
+}

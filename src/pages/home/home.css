@@ -1,0 +1,47 @@
+.motivation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4em;
+}
+
+.motivation h1 {
+    margin-bottom: 0.2em;
+    text-align: center;
+}
+
+.motivation .sub{
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+.motivation .motivation-list {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    padding: 0;
+    gap: 2em;
+}
+
+.motivation ul.motivation-list {
+    list-style: none;
+}
+
+@media (max-width: 900px) {
+    .motivation {
+        padding: 0 2em;
+    }
+
+    .motivation .motivation-list {
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .motivation {
+        padding: 0 1em;
+    }
+
+    .motivation .motivation-list {
+        grid-template: repeat(6, 1fr) / repeat(1, 1fr);
+    }
+}

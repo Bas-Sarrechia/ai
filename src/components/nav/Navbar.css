@@ -1,0 +1,174 @@
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Desktop nav links ── */
+nav ul {
+    list-style: none;
+    display: flex;
+    place-content: end;
+    flex-direction: row;
+    padding: 0;
+    margin: 0 4em 0 0;
+    gap: 0.2em;
+}
+
+nav ul li {
+    display: flex;
+    border-radius: var(--border-radius-small);
+}
+
+nav ul li.active {
+    background: var(--accent-color);
+    border-radius: var(--border-radius-small);
+    color: var(--background-color);
+}
+
+nav ul li:hover  {
+    cursor: pointer;
+    color: var(--background-color);
+}
+
+nav ul li:hover:not(.active) {
+    background: var(--secondary-color);
+}
+
+nav ul li {
+    color: var(--text-color);
+    padding: 0.2em 1em;
+}
+
+nav ul li a:hover {
+    color: var(--background-color);
+}
+
+nav ul li.active a:hover {
+    color: var(--text-color);
+}
+
+nav hr {
+    border: 1px solid var(--border-gray);
+    width: 96%;
+    margin: 0;
+    align-self: center;
+}
+
+#default-menu {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#mobile-menu {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    display: none;
+}
+
+#mobile-menu div {
+    display: flex;
+    justify-content: end;
+    margin-right: 1em;
+}
+
+.burger {
+    display: none;
+    left: 2rem;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    gap: 5px;
+    align-items: end;
+}
+
+.burger:focus {
+    outline: none;
+}
+
+.burger div {
+    width: 2rem;
+    height: 0.2em;
+    background: var(--main-color, #0D0C1D);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.burger div:nth-child(2) {
+    width: 1.5rem;
+    height: 0.2em;
+    background: var(--main-color, #0D0C1D);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.burger.open div:first-child {
+    transform: rotate(45deg);
+}
+
+.burger.open div:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.burger.open div:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    background: var(--background-color);
+    transform: translateX(-100%);
+    height: 100vh;
+    text-align: left;
+    padding: 1rem;
+    position: fixed;
+    top: 4em;
+    right: -600px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1050;
+    width: 300px;
+    border-left: 1px solid var(--border-gray);
+}
+
+.burger-menu.open {
+    transform: translateX(-600px);
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    #mobile-menu {
+        display: block;
+    }
+
+    #default-menu {
+        display: none;
+    }
+
+    .burger-menu {
+        width: 30vw;
+        display: flex;
+    }
+
+    nav ul {
+        margin: 0;
+        gap: 0.3em;
+    }
+    nav ul li {
+        margin: 0;
+    }
+}

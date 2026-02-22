@@ -1,0 +1,71 @@
+section.card {
+    border: 1px solid #b3b4b8;
+    height: 100%;
+    border-radius: var(--border-radius-small);
+    padding-left: 1em;
+    padding-right: 1em;
+    display: grid;
+    grid-template-columns: 2.5em 1fr;
+    grid-template-rows: 2.5em 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+    padding-top: 1em;
+    background-image: linear-gradient(
+            135deg,
+            var(--secondary-color-light-2) 0%,
+            var(--secondary-color-light) 100%
+    );
+}
+
+section.card .card--icon-pill {
+    background-color: var(--secondary-color);
+
+    height: 100%;
+    border-radius: var(--border-radius-small);
+    transform: scale(1);
+    transform-origin: center;
+    display: flex;
+    place-content: center;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+section.card .card--icon {
+    grid-area: 1 / 1 / 1 / 1;
+    width: 100%;
+    height: 100%;
+    margin: 0.3em;
+    place-self: center;
+
+    background-color: var(--background-color);
+
+    -webkit-mask: var(--icon-url) center / contain no-repeat;
+    mask: var(--icon-url) center / contain no-repeat;
+
+}
+
+section .card .card--description{
+    margin: 0;
+}
+
+section.card:hover .card--icon-pill {
+    transform: scale(1.3);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+section.card h4 {
+    grid-area: 1 / 2 / 1 / 2;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+}
+
+section.card p {
+    grid-area: 2 / 1 / 2 / 3;
+}
+
+section.card:hover {
+    border-color: var(--main-color);
+}
